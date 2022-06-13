@@ -1,0 +1,29 @@
+{
+    "name": "ahmedtaha/file-uploader",
+    "description": "a PHP class which simplifies file uploading",
+    "autoload": {
+        "psr-4": {
+            "Ahmedtaha\\FileUploader\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ahmed Taha",
+            "email": "ahmed.taha.ibrahim.94@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers" : [
+                "Ahmedtaha\\FileUploader\\FileUploaderServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "intervention/image": "^2.5"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    }
+}
