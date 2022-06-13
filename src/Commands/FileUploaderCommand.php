@@ -37,6 +37,5 @@ class FileUploaderCommand extends Command
      */
     public function handle()
     {
-       echo "Hello";
     }
 }
