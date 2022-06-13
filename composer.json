@@ -1,5 +1,5 @@
 {
-    "name": "ahmedtaha/file-uploader",
+    "name": "ahmedtaha/laravel-file-uploader",
     "description": "a PHP class which simplifies file uploading",
     "autoload": {
         "psr-4": {
