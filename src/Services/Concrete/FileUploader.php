@@ -15,7 +15,7 @@ class FileUploader implements IFileUploader
     /**
      * @return FileUploader
      */
-    #[Pure] static public function getInstance(): FileUploader
+    static public function getInstance(): FileUploader
     {
         return new self;
     }
@@ -54,13 +54,27 @@ class FileUploader implements IFileUploader
                 $allowedImagesMimeTypes = ['image/jpeg','image/jpg','image/png','image/webp'] ;
 
                 if(!in_array($fileMimeType, $allowedImagesMimeTypes, true)){
-                    throw new \RuntimeException('Make sure file mime type is in jpeg,jpg,png,webp');
+                    throw new \RuntimeException('Make sure file mime type is in '. implode(',', $allowedImagesMimeTypes));
                 }
                 return $this->uploadImage() ;
             }else{
-                $allowedMimeTypes = ['application/pdf'  ,'application/msword' , 'application/excel','application/vnd.ms-excel','application/vnd.msexcel','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'] ;
+                $allowedMimeTypes = [
+                    'application/pdf'  ,
+                    'application/msword' ,
+                    'application/excel',
+                    'application/vnd.ms-excel',
+                    'application/vnd.msexcel',
+                    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                    'video/mp4',
+                    'video/x-flv',
+                    'video/MP2T',
+                    'video/3gpp',
+                    'video/quicktime',
+                    'video/x-msvideo',
+                    'video/x-ms-wmv'
+                ] ;
                 if(!in_array($fileMimeType, $allowedMimeTypes, true)){
-                    throw new \RuntimeException('Make sure file mime type is in pdf,msword,excel,vnd.ms-excel,msexcel,openxmlformats,spreadsheetml.sheet',);
+                    throw new \RuntimeException('Make sure file mime type is in ' . implode(',', $allowedMimeTypes),);
                 }
                 return  $this->uploadFile();
             }
